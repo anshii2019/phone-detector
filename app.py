@@ -2,12 +2,18 @@ import streamlit as st
 from ultralytics import YOLO
 import cv2
 import numpy as np
-import winsound
+
 import datetime
 import time
 current_time = time.time()          
 import os
 os.makedirs("alert", exist_ok=True)
+
+try:
+    import winsound
+    winsound.Beep(1000, 500)  # Test sound
+except :
+    pass
 
 # Page config
 st.set_page_config(page_title="AI Phone Detector", layout="centered")
